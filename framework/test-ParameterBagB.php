@@ -4,8 +4,8 @@
 
 require 'ParameterBagB.php';
 
-$obj = new ParameterBagB(['AZ', 'ER', 'TY', 313 ]);
+$obj = new ParameterBagB(['AZ', 'ER', 'TY', 313, true ]);
 
-echo $obj->count();     // Prints 4
+echo $obj->count();     // Prints 5
 echo "\n";
-echo count($obj);       // Prints 4
+echo count($obj);       // Prints 5
