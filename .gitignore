@@ -30,6 +30,13 @@
 !bin/console
 !bin/symfony_requirements
 /vendor/
+/.DS_Store
+.DS_Store
+/.idea/
+/.vscode/
+/.env
+.env
+
 
 # Assets and user uploads
 /web/bundles/
