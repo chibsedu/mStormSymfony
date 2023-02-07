@@ -1,30 +1,20 @@
-
 $> composer require symfony/http-foundation
+$> composer require symfony/routing
+
 $> symfony server:start
 $> symfony local:php:list (version PHP)
 
 https://symfony.com/doc/4.4/create_framework/introduction.html
 
-Anyway, if you have a look at the MVC semantics, this book is about how to create the Controller 
-part of a framework. For the Model and the View, it really depends on your personal taste and 
-you can use any existing third-party libraries (Doctrine, Propel or plain-old PDO for the Model; 
-PHP or Twig for the View).
+http://localhost:8888/create_framework/routing.html
+ROUTING
+With URL map, we have decoupled the URL from the code that generates the associated response,
+but it is not yet flexible enough.
+For instance, we might want to support dynamic paths to allow embedding data directly into the URL
+(e.g. /hello/Fabien) instead of relying on a query string (e.g. /hello?name=Fabien).
 
-THE FUNDAMENTAL PRINCIPLES OF THE SYMFONY COMPONENTS ARE FOCUSED ON THE HTTP SPECIFICATION.
- 
-As such, the framework that you are going to create should be more accurately labelled as a
-HTTP framework or Request/Response framework.
+Route configuration has been moved to its own file: src/app.php (No more map array in front(end).php file.
 
-The first step towards better code is probably to use an Object-Oriented approach; 
-that's the main goal of the Symfony HttpFoundation component: 
-replacing the default PHP global variables and functions by an Object-Oriented layer.
+We now have a clear separation between the configuration (everything specific to our application in app.php)
+and the framework (the generic code that powers our application in front.php).
 
-
-https://symfony.com/doc/4.4/create_framework/http_foundation.html
-- The createFromGlobals() method creates a Request object based on the current PHP global variables.
-- The send() method sends the Response object back to the client
-    (it first outputs the HTTP headers followed by the content).
-
-http://localhost:8888/create_framework/http_foundation.html
-AUTOLOADING
-Without autoloading, you would need to require the file where a class is defined before being able to use it.
