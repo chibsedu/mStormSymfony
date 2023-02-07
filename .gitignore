@@ -60,8 +60,8 @@
 
 
 # PHPStorm Mac
-/vendor/
-/.idea/
+vendor/
+.idea/
 /.DS_Store
 .idea/
 .DS_Store
